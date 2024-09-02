@@ -16,4 +16,9 @@ The tracker can be launched by simply running:
 This will open the window and set the current global counter at zero. The numpad keys can be used to increment the count by their respective number. In other words press numpad-1 after killing a single enemy to increment the counter once, or numpad-8 after killing 8 enemies to increment it 8 times.
 
 ## Limitations and future work
-The window is not currently resizeable and the hotkeys can't be easily changed. There is also no way to set the counter to a specific position, only increment it.
+* The window is not currently resizeable.
+* A future update will add a mode that only shows the drop table and not the enemy images
+* Hotkeys can't be easily changed.
+* The `keyboard` module detects the arrow keys as numpad keys for some reason. 
+    * This can be fixed but involves other changes that I'm procrastinating
+* There is no way to set the counter to a specific position, only increment it.
