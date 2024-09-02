@@ -1,4 +1,5 @@
 from tkinter import *
+import argparse
 import keyboard
 import os
 import threading
@@ -37,10 +38,18 @@ def move_highlight(count_increment, canvas, rect_id):
     canvas.moveto(rect_id, new_coords[0], new_coords[1])
 
 ########################################################################################################################
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--small', '-s', help='Use the small version of the item drops image', action='store_true')
+args = parser.parse_args()
+
 root = Tk()
 
 # Create the canvas and the item drops image
-c = Canvas(root, height=410, width=704, bg='black', bd=3)
+if args.small:
+    c = Canvas(root, height=410, width=230, bg='black', bd=3)
+else:
+    c = Canvas(root, height=410, width=704, bg='black', bd=3)
 
 cwd = os.getcwd()
 cwd.replace('\\', '/')

@@ -17,6 +17,9 @@ This will open the window and set the current global counter at zero. The numpad
 
 Pressing numpad 0 will reset the counter back to 0
 
+The script can also be run with just the item table showing by passing in `--small` or simply `-s` on the command line:
+    `python global_tracker.py --small`
+
 ## Limitations and future work
 * The window is not currently resizeable.
 * A future update will add a mode that only shows the drop table and not the enemy images
