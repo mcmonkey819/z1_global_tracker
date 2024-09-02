@@ -29,7 +29,10 @@ def timed_highlight_move(canvas, rect_id):
 ########################################################################################################################
 def move_highlight(count_increment, canvas, rect_id):
     global global_count
-    global_count += count_increment
+    if count_increment is None:
+        global_count = 0
+    else:
+        global_count += count_increment
     new_coords = get_highlight_coords(global_count)[0]
     canvas.moveto(rect_id, new_coords[0], new_coords[1])
 
@@ -59,5 +62,8 @@ c.pack()
 numpad_codes = [82, 79, 80, 81, 75, 76, 77, 71, 72, 73]
 for i in range(1, 10):
     keyboard.add_hotkey(numpad_codes[i], move_highlight, args=(i, c, r))
+
+# Special case for reset which is numpad 0
+keyboard.add_hotkey(numpad_codes[0], move_highlight, args=(None, c, r))
 
 root.mainloop()
