@@ -22,7 +22,6 @@ The script can also be run with just the item table showing by passing in `--sma
 
 ## Limitations and future work
 * The window is not currently resizeable.
-* A future update will add a mode that only shows the drop table and not the enemy images
 * Hotkeys can't be easily changed.
 * The `keyboard` module detects the arrow keys as numpad keys for some reason. 
     * This can be fixed but involves other changes that I'm procrastinating
